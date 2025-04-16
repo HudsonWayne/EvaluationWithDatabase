@@ -43,5 +43,10 @@ if not file.exists():
     sheet['L1'] = "Mother's Occupation"
 
     wb.save(file_path)
+    
+Label(root,text="Email: hudsonnbenhuraa@gmail.com",width=10,height=3,bg="#f0687c",anchor='e').pack(side=TOP,fill="x")
+    
+    
+    
 
 root.mainloop()
