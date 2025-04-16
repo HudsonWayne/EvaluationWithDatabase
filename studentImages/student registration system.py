@@ -45,6 +45,8 @@ if not file.exists():
     wb.save(file_path)
     
 Label(root,text="Email: hudsonnbenhuraa@gmail.com",width=10,height=3,bg="#f0687c",anchor='e').pack(side=TOP,fill="x")
+Label(root,text="STUDENT REGISTRATION: hudsonnbenhuraa@gmail.com",width=10,height=2,bg="#c36464",fg='#fff',font= 'arial 20 bold').pack(side=TOP,fill="x")
+
     
     
     
