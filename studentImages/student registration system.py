@@ -16,7 +16,7 @@ framefg = "#06283D"
 
 # ---------- WINDOW SETUP ----------
 root = Tk()
-root.title("Student Registration")
+root.title("Student Registration System")
 root.geometry("1250x700+210+100")
 root.config(bg=background)
 
@@ -48,7 +48,7 @@ if not file.exists():
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
       anchor='e', fg='white', font='arial 12', height=2).pack(side=TOP, fill="x")
 
-Label(root, text="STUDENT REGISTRATION SYSTEM", bg="#c36464", fg='white',
+Label(root, text="STUDENT REGISTRATION ", bg="#c36464", fg='white',
       font='arial 20 bold', height=2).pack(side=TOP, fill="x")
 
 # ---------- SEARCH BOX ----------
