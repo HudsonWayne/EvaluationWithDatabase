@@ -20,4 +20,14 @@ root.title("Student Registration System")
 root.geometry("1250x700+210+100")
 root.config(bg=background)
 
+
+
+file = pathlib.Path('Student_data.xlsx')
+if file.exists():
+    pass
+else:
+    file=workbook
+
+
+
 root.mainloop()
