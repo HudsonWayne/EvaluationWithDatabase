@@ -27,6 +27,19 @@ if file.exists():
     pass
 else:
     file=workbook
+    sheet=file.active
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
+    sheet['A1']=""
 
 
 
