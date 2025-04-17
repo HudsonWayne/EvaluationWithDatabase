@@ -82,6 +82,12 @@ if os.path.exists(search_img_path):
     Srch.pack(side=LEFT, padx=5)
 else:
     print("Image not found:", search_img_path)
+    
+    
+imageicon4=PhotoImage(file="images\layer.jpg")
+Update_button=Button(root,image=imageicon4,bg="#c36464")
+Update_button.place(x=110,y=64)
+
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
