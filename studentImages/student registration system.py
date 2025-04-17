@@ -54,7 +54,10 @@ Label(root, text="STUDENT REGISTRATION ", bg="#c36464", fg='white',
 # ---------- SEARCH BOX ----------
 Search = StringVar()
 Entry(root, textvariable=Search, width=15, bd=2, font="arial 20").place(x=850, y=70)
-# Label(root, text="Search", font="arial 12 bold", bg=background, fg="white").place(x=790, y=90)
+imageicon3 = PhotoImage(file="images/search.png")
+Srch = Button(root, text="Search", compound=LEFT, image=imageicon3, width=123, bg='#68ddfa', font="arial 13 bold")
+Srch.place(x=1060, y=66)
+
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
