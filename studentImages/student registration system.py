@@ -1,7 +1,6 @@
 from tkinter import *
 from datetime import date
-from tkinter import filedialog
-from tkinter import messagebox
+from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 import os
 from tkinter.ttk import Combobox
@@ -44,20 +43,40 @@ if not file.exists():
 
     wb.save(file_path)
 
-# ---------- HEADER SECTION ----------
+# ---------- EMAIL BAR AT THE TOP ----------
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
       anchor='e', fg='white', font='arial 12', height=2).pack(side=TOP, fill="x")
 
-Label(root, text="STUDENT REGISTRATION ", bg="#c36464", fg='white',
-      font='arial 20 bold', height=2).pack(side=TOP, fill="x")
+# ---------- HEADER SECTION WITH SEARCH ----------
+header_frame = Frame(root, bg="#c36464", height=80)
+header_frame.pack(side=TOP, fill="x")
 
-# ---------- SEARCH BOX ----------
+
+title_frame = Frame(header_frame, bg="#c36464")
+title_frame.pack(side=LEFT, padx=20)
+Label(title_frame, text="STUDENT REGISTRATION", bg="#c36464", fg='white',
+      font='arial 20 bold', height=2).pack()
+
+
+search_frame = Frame(header_frame, bg="#c36464")
+search_frame.pack(side=RIGHT, padx=20)
+
 Search = StringVar()
-Entry(root, textvariable=Search, width=15, bd=2, font="arial 20").place(x=850, y=70)
-imageicon3 = PhotoImage(file="images/search.png")
-Srch = Button(root, text="Search", compound=LEFT, image=imageicon3, width=123, bg='#68ddfa', font="arial 13 bold")
-Srch.place(x=1060, y=66)
+Entry(search_frame, textvariable=Search, width=20, bd=2,
+      font="arial 16").pack(side=LEFT, padx=10, pady=20)
 
+
+search_img_path = "images/search.png"
+if os.path.exists(search_img_path):
+    search_img = Image.open(search_img_path)
+    search_img = search_img.resize((30, 30))
+    imageicon3 = ImageTk.PhotoImage(search_img)
+
+    Srch = Button(search_frame, text="Search", compound=LEFT, image=imageicon3,
+                  bg='#68ddfa', font="arial 12 bold", padx=10)
+    Srch.pack(side=LEFT, padx=5)
+else:
+    print("Image not found:", search_img_path)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
