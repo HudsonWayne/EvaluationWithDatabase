@@ -97,6 +97,11 @@ Registration=StringVar()
 Date = StringVar()
 
 reg_entry = Entry(root,textvariable=Registration,width=15,font="arial 10")
+reg_entry.place(x=160, y = 150)
+
+
+today = date.tody()
+d1 = today.strtime("%d/%m/%Y")
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
