@@ -172,6 +172,8 @@ skill_entry.place(x=630,y = 150)
 
 
 
+Class = Combobox(obj, values = ['1','2','3','4','5','6','7','8','9','10','11','12'], font = "Roboto", width = 17, state = "r")
+
 
 
 
