@@ -160,15 +160,15 @@ R2.place(x=200, y = 150)
 
 
 
-Name = StringVar()
-name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
-name_entry.place(x=160,y = 50)
+Religion = StringVar()
+religion_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
+religion_entry.place(x=630,y = 100)
 
 
 
-Name = StringVar()
-name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
-name_entry.place(x=160,y = 50)
+Skill = StringVar()
+skill_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
+skill_entry.place(x=160,y = 50)
 
 
 
