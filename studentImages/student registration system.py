@@ -146,12 +146,29 @@ Name = StringVar()
 name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
 name_entry.place(x=160,y = 50)
 
+
+DOB = StringVar()
+dob_entry = Entry(obj, textvariable=DOB,width=20,font="arial 10")
+dob_entry.place(x=160,y = 100)
+
 radio = IntVar()
 R1= Radiobutton(obj,text="Male", variable=radio,value=1,bg=framebg, fg=framefg, command= selection)
 R1.place(x=150, y = 150)
 
 R2= Radiobutton(obj,text="Female", variable=radio,value=2,bg=framebg, fg=framefg, command= selection)
 R2.place(x=200, y = 150)
+
+
+
+Name = StringVar()
+name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
+name_entry.place(x=160,y = 50)
+
+
+
+Name = StringVar()
+name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
+name_entry.place(x=160,y = 50)
 
 
 
