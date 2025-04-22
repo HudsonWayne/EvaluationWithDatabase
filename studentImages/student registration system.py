@@ -124,7 +124,7 @@ Label(obj,text="Full Name:", font="arial 13", bg=framebg,fg=framefg).place(x=30,
 Label(obj,text="Date of Birth:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 100)
 Label(obj,text="Gender:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 150)
 
-Label(obj,text="Class:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 50)
+Label(obj,text="Class:", font="arial 13", bg=framebg,fg=framefg).place(x=5000, y = 50)
 Label(obj,text="Religion:", font="arial 13", bg=framebg,fg=framefg).place(x = 500, y = 100)
 Label(obj,text="Skills:", font="arial 13", bg=framebg,fg=framefg).place(x=500, y = 150)
 
