@@ -90,7 +90,13 @@ Update_button.place(x=110,y=64)
 
 
 #Registration and date
-Label(root,text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y = 1)
+Label(root,text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y = 150)
+Label(root,text="Date", font="arial 13", fg=framebg, bg=background).place(x=500, y = 150)
+
+Registration=StringVar()
+Date = StringVar()
+
+reg_entry = Entry(root,textvariable=Registration,width=15,font="arial 10")
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
