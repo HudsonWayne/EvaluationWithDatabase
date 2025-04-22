@@ -82,26 +82,35 @@ if os.path.exists(search_img_path):
     Srch.pack(side=LEFT, padx=5)
 else:
     print("Image not found:", search_img_path)
-    
-    
-imageicon4=PhotoImage(file="images\layer.jpg")
-Update_button=Button(root,image=imageicon4,bg="#c36464")
-Update_button.place(x=110,y=64)
 
+# Update Button with icon
+layer_img_path = "images/layer.jpg"
+if os.path.exists(layer_img_path):
+    layer_img = Image.open(layer_img_path)
+    layer_img = layer_img.resize((40, 40))  # Optional: resize
+    imageicon4 = ImageTk.PhotoImage(layer_img)
 
-#Registration and date
-Label(root,text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y = 150)
-Label(root,text="Date", font="arial 13", fg=framebg, bg=background).place(x=500, y = 150)
+    Update_button = Button(root, image=imageicon4, bg="#c36464")
+    Update_button.place(x=110, y=64)
+else:
+    print("Image not found:", layer_img_path)
 
-Registration=StringVar()
+# Registration and date
+Label(root, text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y=150)
+Label(root, text="Date", font="arial 13", fg=framebg, bg=background).place(x=500, y=150)
+
+Registration = StringVar()
 Date = StringVar()
 
-reg_entry = Entry(root,textvariable=Registration,width=15,font="arial 10")
-reg_entry.place(x=160, y = 150)
+reg_entry = Entry(root, textvariable=Registration, width=15, font="arial 10")
+reg_entry.place(x=160, y=150)
 
+today = date.today()
+d1 = today.strftime("%d/%m/%Y")
 
-today = date.tody()
-d1 = today.strtime("%d/%m/%Y")
+date_entry = Entry(root, textvariable=Date, width=15, font="arial 10")
+date_entry.place(x=550, y=150)
+Date.set(d1)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
