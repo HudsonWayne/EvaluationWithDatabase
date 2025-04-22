@@ -57,6 +57,7 @@ def selection():
         print(gender)
     else:
         gender = "Female"
+        print(gender)
     
 
 
