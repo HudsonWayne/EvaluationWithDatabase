@@ -19,9 +19,13 @@ root.title("Student Registration System")
 root.geometry("1250x700+210+100")
 root.config(bg=background)
 
+# ---------- Paths ----------
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMAGE_DIR = os.path.join(BASE_DIR, "images")
+EXCEL_PATH = os.path.join(BASE_DIR, "student_data.xlsx")
+
 # ---------- EXCEL FILE CHECK ----------
-file_path = 'student_data.xlsx'
-file = pathlib.Path(file_path)
+file = pathlib.Path(EXCEL_PATH)
 
 if not file.exists():
     wb = Workbook()
@@ -41,18 +45,18 @@ if not file.exists():
     sheet['K1'] = "Father's Occupation"
     sheet['L1'] = "Mother's Occupation"
 
-    wb.save(file_path)
+    wb.save(EXCEL_PATH)
 
-# ---------- EMAIL BAR AT THE TOP ----------
+# ---------- EMAIL BAR ----------
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
       anchor='e', fg='white', font='arial 12', height=2).pack(side=TOP, fill="x")
 
-# ---------- HEADER SECTION WITH SEARCH ----------
+# ---------- HEADER ----------
 header_frame = Frame(root, bg="#c36464", height=80)
 header_frame.pack(side=TOP, fill="x")
 
 title_frame = Frame(header_frame, bg="#c36464")
-title_frame.pack(side=LEFT, padx=20)
+title_frame.pack(side=LEFT, padx=190)  # ← Adjusted this from 20 to 90
 
 Label(title_frame, text="STUDENT REGISTRATION", bg="#c36464", fg='white',
       font='arial 20 bold', height=2).pack()
@@ -65,37 +69,33 @@ search_entry = Entry(search_frame, textvariable=Search, width=20, bd=2,
                      font="arial 16")
 search_entry.pack(side=LEFT, padx=10, pady=20)
 
-# Function to focus on the search bar when the button is clicked
 def focus_search():
     search_entry.focus_set()
 
-# Search Button with icon
-search_img_path = "images/search.png"
-if os.path.exists(search_img_path):
-    search_img = Image.open(search_img_path)
-    search_img = search_img.resize((30, 30))
-    imageicon3 = ImageTk.PhotoImage(search_img)
+# ---------- IMAGES ----------
+def load_image(path, size):
+    try:
+        img = Image.open(path)
+        img = img.resize(size)
+        return ImageTk.PhotoImage(img)
+    except Exception as e:
+        print(f"Image not found: {path}")
+        return None
 
-    Srch = Button(search_frame, text="Search", compound=LEFT, image=imageicon3,
+search_img = load_image(os.path.join(IMAGE_DIR, "search.png"), (30, 30))
+layer_img = load_image(os.path.join(IMAGE_DIR, "layer.jpg"), (40, 40))
+
+if search_img:
+    Srch = Button(search_frame, text="Search", compound=LEFT, image=search_img,
                   bg='#68ddfa', font="arial 12 bold", padx=10,
                   command=focus_search)
     Srch.pack(side=LEFT, padx=5)
-else:
-    print("Image not found:", search_img_path)
 
-# Update Button with icon
-layer_img_path = "images/layer.jpg"
-if os.path.exists(layer_img_path):
-    layer_img = Image.open(layer_img_path)
-    layer_img = layer_img.resize((40, 40))  # Optional: resize
-    imageicon4 = ImageTk.PhotoImage(layer_img)
-
-    Update_button = Button(root, image=imageicon4, bg="#c36464")
+if layer_img:
+    Update_button = Button(root, image=layer_img, bg="#c36464")
     Update_button.place(x=110, y=64)
-else:
-    print("Image not found:", layer_img_path)
 
-# Registration and date
+# ---------- REGISTRATION NO. & DATE ----------
 Label(root, text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y=150)
 Label(root, text="Date", font="arial 13", fg=framebg, bg=background).place(x=500, y=150)
 
@@ -112,37 +112,33 @@ date_entry = Entry(root, textvariable=Date, width=15, font="arial 10")
 date_entry.place(x=550, y=150)
 Date.set(d1)
 
-
-#student details
-obj = LabelFrame(root, text="Student's Details", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=250, relief=GROOVE)
+# ---------- STUDENT DETAILS ----------
+obj = LabelFrame(root, text="Student's Details", font=20, bd=2, width=900, bg=framebg, fg=framefg, height=250, relief=GROOVE)
 obj.place(x=30, y=200)
 
+Label(obj, text="Full Name:", font="arial 13", bg=framebg, fg=framefg).place(x=30, y=50)
+Label(obj, text="Date of Birth:", font="arial 13", bg=framebg, fg=framefg).place(x=30, y=100)
+Label(obj, text="Gender:", font="arial 13", bg=framebg, fg=framefg).place(x=30, y=150)
+Label(obj, text="Class:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=50)
+Label(obj, text="Religion:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=100)
+Label(obj, text="Skills:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=150)
+
+
+Name = StringVar()
+name_entry = Entry(obj, textvariable=Name,width=20,font="arial 13")
 
 
 
-Label(obj,text="Full Name:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 50)
-Label(obj,text="Date of Birth:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 100)
-Label(obj,text="Gender:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 150)
-
-Label(obj,text="Class:", font="arial 13", bg=framebg,fg=framefg).place(x=5000, y = 50)
-Label(obj,text="Religion:", font="arial 13", bg=framebg,fg=framefg).place(x = 500, y = 100)
-Label(obj,text="Skills:", font="arial 13", bg=framebg,fg=framefg).place(x=500, y = 150)
 
 
-
-
-#Parent details
-obj2 = LabelFrame(root, text="Parent's Details", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=220, relief=GROOVE)
+# ---------- PARENT DETAILS ----------
+obj2 = LabelFrame(root, text="Parent's Details", font=20, bd=2, width=900, bg=framebg, fg=framefg, height=220, relief=GROOVE)
 obj2.place(x=30, y=470)
 
-
-
-
-
-
-
-
-
+Label(obj2, text="Father's Name:", font="arial 13", bg=framebg, fg=framefg).place(x=30, y=30)
+Label(obj2, text="Father's Occupation:", font="arial 13", bg=framebg, fg=framefg).place(x=30, y=80)
+Label(obj2, text="Mother's Name:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=30)
+Label(obj2, text="Mother's Occupation:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=80)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
