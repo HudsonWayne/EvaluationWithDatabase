@@ -114,7 +114,7 @@ Date.set(d1)
 
 
 #student details
-obj = LabelFrame(root, text="Student's", font=20, bd =2, width=900,bg = framebg)
+obj = LabelFrame(root, text="Student's", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=250, relief=GROOVE)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
