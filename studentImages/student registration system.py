@@ -191,5 +191,8 @@ Label(obj2, text="Father's Occupation:", font="arial 13", bg=framebg, fg=framefg
 Label(obj2, text="Mother's Name:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=30)
 Label(obj2, text="Mother's Occupation:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=80)
 
+M_Name = StringVar()
+M_entry = Entry(obj2, textvariable=M_Name,width=20,font="arial 10")
+
 # ---------- MAIN LOOP ----------
 root.mainloop()
