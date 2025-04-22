@@ -125,7 +125,18 @@ Label(obj, text="Skills:", font="arial 13", bg=framebg, fg=framefg).place(x=500,
 
 
 Name = StringVar()
-name_entry = Entry(obj, textvariable=Name,width=20,font="arial 13")
+name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
+name_entry.place(x=160,y = 50)
+
+radio = IntVar()
+R1= Radiobutton(obj,text="Male", variable=radio,value=1,bg=framebg, fg=framefg)
+R1.place(x=150, y = 150)
+
+
+
+
+
+
 
 
 
