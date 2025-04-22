@@ -117,9 +117,17 @@ Date.set(d1)
 obj = LabelFrame(root, text="Student's Details", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=250, relief=GROOVE)
 obj.place(x=30, y=200)
 
+
+
+
+Label(root,text="Full Name:", font="arial 13", bg=framebg,fg=framefg).place(x=30, y = 50)
+
+
+
+
 #Parent details
-obj2 = LabelFrame(root, text="Parent's Details", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=250, relief=GROOVE)
-obj2.place(x=30, y=200)
+obj2 = LabelFrame(root, text="Parent's Details", font=20, bd =2, width=900,bg = framebg, fg=framebg, height=220, relief=GROOVE)
+obj2.place(x=30, y=470)
 
 
 
