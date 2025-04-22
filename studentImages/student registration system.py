@@ -47,6 +47,23 @@ if not file.exists():
 
     wb.save(EXCEL_PATH)
 
+
+
+#gender
+def selection():
+    value = radio.get()
+    if value == 1:
+        gender = "Male"
+        print(gender)
+    else:
+        gender = "Female"
+    
+
+
+
+
+
+
 # ---------- EMAIL BAR ----------
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
       anchor='e', fg='white', font='arial 12', height=2).pack(side=TOP, fill="x")
@@ -129,9 +146,11 @@ name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
 name_entry.place(x=160,y = 50)
 
 radio = IntVar()
-R1= Radiobutton(obj,text="Male", variable=radio,value=1,bg=framebg, fg=framefg)
+R1= Radiobutton(obj,text="Male", variable=radio,value=1,bg=framebg, fg=framefg, command= selection)
 R1.place(x=150, y = 150)
 
+R2= Radiobutton(obj,text="Female", variable=radio,value=2,bg=framebg, fg=framefg, command= selection)
+R2.place(x=200, y = 150)
 
 
 
