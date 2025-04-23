@@ -186,9 +186,10 @@ except Exception as e:
     
 #Button   
 Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=370)
-Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=370)
-Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=370)
-Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=370)
+saveButton=Button(root,text="Save",width=19,height=2,font="arial 12 bold",bg="lightblue")
+saveButton.place(x=1000,y=450)
+Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=530)
+Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=610)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
