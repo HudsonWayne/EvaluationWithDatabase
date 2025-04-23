@@ -20,13 +20,12 @@ root.geometry("1250x700+210+100")
 root.config(bg=background)
 
 # ---------- Paths ----------
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_DIR = os.path.join(BASE_DIR, "images")
 EXCEL_PATH = os.path.join(BASE_DIR, "student_data.xlsx")
 
 # ---------- EXCEL FILE CHECK ----------
 file = pathlib.Path(EXCEL_PATH)
-
 if not file.exists():
     wb = Workbook()
     sheet = wb.active
@@ -47,23 +46,11 @@ if not file.exists():
 
     wb.save(EXCEL_PATH)
 
-
-
-#gender
+# ---------- Gender Selection Function ----------
 def selection():
     value = radio.get()
-    if value == 1:
-        gender = "Male"
-        print(gender)
-    else:
-        gender = "Female"
-        print(gender)
-    
-
-
-
-
-
+    gender = "Male" if value == 1 else "Female"
+    print(gender)
 
 # ---------- EMAIL BAR ----------
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
@@ -74,7 +61,7 @@ header_frame = Frame(root, bg="#c36464", height=80)
 header_frame.pack(side=TOP, fill="x")
 
 title_frame = Frame(header_frame, bg="#c36464")
-title_frame.pack(side=LEFT, padx=190)  # ← Adjusted this from 20 to 90
+title_frame.pack(side=LEFT, padx=190)
 
 Label(title_frame, text="STUDENT REGISTRATION", bg="#c36464", fg='white',
       font='arial 20 bold', height=2).pack()
@@ -90,7 +77,7 @@ search_entry.pack(side=LEFT, padx=10, pady=20)
 def focus_search():
     search_entry.focus_set()
 
-# ---------- IMAGES ----------
+# ---------- Load Images ----------
 def load_image(path, size):
     try:
         img = Image.open(path)
@@ -124,11 +111,9 @@ reg_entry = Entry(root, textvariable=Registration, width=15, font="arial 10")
 reg_entry.place(x=160, y=150)
 
 today = date.today()
-d1 = today.strftime("%d/%m/%Y")
-
+Date.set(today.strftime("%d/%m/%Y"))
 date_entry = Entry(root, textvariable=Date, width=15, font="arial 10")
 date_entry.place(x=550, y=150)
-Date.set(d1)
 
 # ---------- STUDENT DETAILS ----------
 obj = LabelFrame(root, text="Student's Details", font=20, bd=2, width=900, bg=framebg, fg=framefg, height=250, relief=GROOVE)
@@ -141,46 +126,25 @@ Label(obj, text="Class:", font="arial 13", bg=framebg, fg=framefg).place(x=500, 
 Label(obj, text="Religion:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=100)
 Label(obj, text="Skills:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=150)
 
-
 Name = StringVar()
-name_entry = Entry(obj, textvariable=Name,width=20,font="arial 10")
-name_entry.place(x=160,y = 50)
-
+Entry(obj, textvariable=Name, width=20, font="arial 10").place(x=160, y=50)
 
 DOB = StringVar()
-dob_entry = Entry(obj, textvariable=DOB,width=20,font="arial 10")
-dob_entry.place(x=160,y = 100)
+Entry(obj, textvariable=DOB, width=20, font="arial 10").place(x=160, y=100)
 
 radio = IntVar()
-R1= Radiobutton(obj,text="Male", variable=radio,value=1,bg=framebg, fg=framefg, command= selection)
-R1.place(x=150, y = 150)
+Radiobutton(obj, text="Male", variable=radio, value=1, bg=framebg, fg=framefg, command=selection).place(x=150, y=150)
+Radiobutton(obj, text="Female", variable=radio, value=2, bg=framebg, fg=framefg, command=selection).place(x=200, y=150)
 
-R2= Radiobutton(obj,text="Female", variable=radio,value=2,bg=framebg, fg=framefg, command= selection)
-R2.place(x=200, y = 150)
-
-
-
-Religion = StringVar()
-religion_entry = Entry(obj, textvariable=Religion,width=20,font="arial 10")
-religion_entry.place(x=630,y = 100)
-
-
-
-Skill = StringVar()
-skill_entry = Entry(obj, textvariable=Skill,width=20,font="arial 10")
-skill_entry.place(x=630,y = 150)
-
-
-
-Class = Combobox(obj, values = ['1','2','3','4','5','6','7','8','9','10','11','12'], font = "Roboto", width = 17, state = "r")
-Class.place(x=630, y = 50)
+Class = Combobox(obj, values=[str(i) for i in range(1, 13)], font="Roboto", width=17, state="r")
+Class.place(x=630, y=50)
 Class.set("Select Class")
 
+Religion = StringVar()
+Entry(obj, textvariable=Religion, width=20, font="arial 10").place(x=630, y=100)
 
-
-
-
-
+Skill = StringVar()
+Entry(obj, textvariable=Skill, width=20, font="arial 10").place(x=630, y=150)
 
 # ---------- PARENT DETAILS ----------
 obj2 = LabelFrame(root, text="Parent's Details", font=20, bd=2, width=900, bg=framebg, fg=framefg, height=220, relief=GROOVE)
@@ -191,24 +155,33 @@ Label(obj2, text="Father's Occupation:", font="arial 13", bg=framebg, fg=framefg
 Label(obj2, text="Mother's Name:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=30)
 Label(obj2, text="Mother's Occupation:", font="arial 13", bg=framebg, fg=framefg).place(x=500, y=80)
 
+F_Name = StringVar()
+Entry(obj2, textvariable=F_Name, width=20, font="arial 10").place(x=180, y=30)
+
+F_Occupation = StringVar()
+Entry(obj2, textvariable=F_Occupation, width=20, font="arial 10").place(x=180, y=80)
+
 M_Name = StringVar()
-M_entry = Entry(obj2, textvariable=M_Name,width=20,font="arial 10")
-M_entry.place(x=160, y = 50)
+Entry(obj2, textvariable=M_Name, width=20, font="arial 10").place(x=670, y=30)
 
+M_Occupation = StringVar()
+Entry(obj2, textvariable=M_Occupation, width=20, font="arial 10").place(x=670, y=80)
 
-Mother_Occupation = StringVar()
-MO_entry = Entry(obj, textvariable=Mother_Occupation,width=20,font="arial 10")
-MO_entry.place(x=630, y = 100)
+# ---------- IMAGE FRAME ----------
+f = Frame(root, bd=2, width=200, height=200, relief=GROOVE, bg="black")
+f.place(x=1000, y=150)
 
+# ---------- Load and show user.png ----------
+try:
+    user_path = os.path.join(IMAGE_DIR, "user.png")
+    user_img_pil = Image.open(user_path).resize((180, 180))
+    user_img = ImageTk.PhotoImage(user_img_pil)
 
-#image icon
-f = Frame(root,bd="black",width=200,height=200,relief=GROOVE)
-f.place(x=1000, y = 150)
-
-
-
-
-
+    img_label = Label(f, image=user_img, bg="black")
+    img_label.image = user_img
+    img_label.pack()
+except Exception as e:
+    print("Could not load user.png:", e)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
