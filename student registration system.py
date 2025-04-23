@@ -182,6 +182,10 @@ try:
     img_label.pack()
 except Exception as e:
     print("Could not load user.png:", e)
+    
+    
+#Button   
+Button(root,text="Upload",width=19,height=2,font="arial 12 bold")
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
