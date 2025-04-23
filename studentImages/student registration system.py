@@ -203,6 +203,7 @@ MO_entry.place(x=630, y = 100)
 
 #image icon
 f = Frame(root,bd="black",width=200,height=200,relief=GROOVE)
+f.place(x=1000, y = 150)
 
 
 
