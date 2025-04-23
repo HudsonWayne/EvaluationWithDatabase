@@ -201,6 +201,8 @@ MO_entry = Entry(obj, textvariable=Mother_Occupation,width=20,font="arial 10")
 MO_entry.place(x=630, y = 100)
 
 
+#image icon
+f = Frame(root,bd="black",width=200,height=200,relief=GROOVE)
 
 
 
