@@ -60,6 +60,8 @@ def showimage():
                                       title="Select image file", filetype=(("JPG File","*.jpg"),
                                                                            ("PNG File","*png"),
                                                                            ("All files","*txt")))
+    img = (Image.open(filename))
+    resized_image = img.resize()
 
 # ---------- Gender Selection Function ----------
 def selection():
