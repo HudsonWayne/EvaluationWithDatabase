@@ -56,7 +56,10 @@ def Exit():
 
 #showimage
 def showimage():
-    filename = filedialog.askopenfile(initialdir=)
+    filename = filedialog.askopenfile(initialdir=os.getcwd(),
+                                      title="Select image file", filetype=(("JPG File","*.jpg"),
+                                                                           ("PNG File","*png"),
+                                                                           ("All files","*txt")))
 
 # ---------- Gender Selection Function ----------
 def selection():
