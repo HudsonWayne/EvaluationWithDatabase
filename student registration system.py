@@ -34,6 +34,17 @@ if not file.exists():
                   "Religion", "Skill", "Father Name", "Mother Name", "Father's Occupation", "Mother's Occupation"])
     wb.save(EXCEL_PATH)
 
+
+
+
+
+##############Registration No##############
+#noe eachtime you have to eneter Registration No
+
+
+def registration_no():
+    pass
+
 # ---------- Exit ----------
 def Exit():
     root.destroy()
@@ -113,6 +124,9 @@ Date = StringVar()
 
 reg_entry = Entry(root, textvariable=Registration, width=15, font="arial 10")
 reg_entry.place(x=160, y=150)
+
+
+registration_no()
 
 today = date.today()
 Date.set(today.strftime("%d/%m/%Y"))
