@@ -53,6 +53,11 @@ if not file.exists():
 def Exit():
     root.destroy()
 
+
+#showimage
+def showimage():
+    filename = filedialog.askopenfile(initialdir=)
+
 # ---------- Gender Selection Function ----------
 def selection():
     value = radio.get()
