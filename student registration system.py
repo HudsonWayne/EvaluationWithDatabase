@@ -43,7 +43,7 @@ if not file.exists():
 
 
 def registration_no():
-    pass
+    file = openpyxl.load_workbook()
 
 # ---------- Exit ----------
 def Exit():
