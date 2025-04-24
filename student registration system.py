@@ -30,46 +30,34 @@ if not file.exists():
     wb = Workbook()
     sheet = wb.active
     sheet.title = "StudentData"
-
-    sheet['A1'] = "Registration No"
-    sheet['B1'] = "Name"
-    sheet['C1'] = "Class"
-    sheet['D1'] = "Gender"
-    sheet['E1'] = "DOB"
-    sheet['F1'] = "Date of Registration"
-    sheet['G1'] = "Religion"
-    sheet['H1'] = "Skill"
-    sheet['I1'] = "Father Name"
-    sheet['J1'] = "Mother Name"
-    sheet['K1'] = "Father's Occupation"
-    sheet['L1'] = "Mother's Occupation"
-
+    sheet.append(["Registration No", "Name", "Class", "Gender", "DOB", "Date of Registration", 
+                  "Religion", "Skill", "Father Name", "Mother Name", "Father's Occupation", "Mother's Occupation"])
     wb.save(EXCEL_PATH)
-    
-    
-    
-    
-#Exit
+
+# ---------- Exit ----------
 def Exit():
     root.destroy()
 
-
-#showimage
+# ---------- Show Image ----------
 def showimage():
-    filename = filedialog.askopenfile(initialdir=os.getcwd(),
-                                      title="Select image file", filetype=(("JPG File","*.jpg"),
-                                                                           ("PNG File","*png"),
-                                                                           ("All files","*txt")))
-    img = (Image.open(filename))
-    resized_image = img.resize()
+    global photo2
+    filename = filedialog.askopenfilename(initialdir=os.getcwd(),
+                                          title="Select image file",
+                                          filetypes=[("Image Files", "*.jpg *.jpeg *.png")])
+    if filename:
+        img = Image.open(filename)
+        resized_image = img.resize((180, 180))
+        photo2 = ImageTk.PhotoImage(resized_image)
+        lbl.config(image=photo2)
+        lbl.image = photo2
 
-# ---------- Gender Selection Function ----------
+# ---------- Gender Selection ----------
 def selection():
     value = radio.get()
     gender = "Male" if value == 1 else "Female"
     print(gender)
 
-# ---------- EMAIL BAR ----------
+# ---------- Email Bar ----------
 Label(root, text="Email: hudsonnbenhuraa@gmail.com", bg="#f0687c",
       anchor='e', fg='white', font='arial 12', height=2).pack(side=TOP, fill="x")
 
@@ -87,8 +75,7 @@ search_frame = Frame(header_frame, bg="#c36464")
 search_frame.pack(side=RIGHT, padx=20)
 
 Search = StringVar()
-search_entry = Entry(search_frame, textvariable=Search, width=20, bd=2,
-                     font="arial 16")
+search_entry = Entry(search_frame, textvariable=Search, width=20, bd=2, font="arial 16")
 search_entry.pack(side=LEFT, padx=10, pady=20)
 
 def focus_search():
@@ -117,7 +104,7 @@ if layer_img:
     Update_button = Button(root, image=layer_img, bg="#c36464")
     Update_button.place(x=110, y=64)
 
-# ---------- REGISTRATION NO. & DATE ----------
+# ---------- REGISTRATION & DATE ----------
 Label(root, text="Registration No", font="arial 13", fg=framebg, bg=background).place(x=30, y=150)
 Label(root, text="Date", font="arial 13", fg=framebg, bg=background).place(x=500, y=150)
 
@@ -188,25 +175,24 @@ Entry(obj2, textvariable=M_Occupation, width=20, font="arial 10").place(x=670, y
 f = Frame(root, bd=2, width=200, height=200, relief=GROOVE, bg="black")
 f.place(x=1000, y=150)
 
+lbl = Label(f, bg="black")
+lbl.pack()
+
 # ---------- Load and show user.png ----------
 try:
     user_path = os.path.join(IMAGE_DIR, "user.png")
     user_img_pil = Image.open(user_path).resize((180, 180))
     user_img = ImageTk.PhotoImage(user_img_pil)
-
-    img_label = Label(f, image=user_img, bg="black")
-    img_label.image = user_img
-    img_label.pack()
+    lbl.config(image=user_img)
+    lbl.image = user_img
 except Exception as e:
     print("Could not load user.png:", e)
-    
-    
-#Button   
-Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue", command = showimage).place(x=1000,y=370)
-saveButton=Button(root,text="Save",width=19,height=2,font="arial 12 bold",bg="lightgreen")
-saveButton.place(x=1000,y=450)
-Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightpink").place(x=1000,y=530)
-Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="grey",command = Exit).place(x=1000,y=610)
+
+# ---------- Buttons ----------
+Button(root, text="Upload", width=19, height=2, font="arial 12 bold", bg="lightblue", command=showimage).place(x=1000, y=370)
+Button(root, text="Save", width=19, height=2, font="arial 12 bold", bg="lightgreen").place(x=1000, y=450)
+Button(root, text="Reset", width=19, height=2, font="arial 12 bold", bg="lightpink").place(x=1000, y=530)
+Button(root, text="Exit", width=19, height=2, font="arial 12 bold", bg="grey", command=Exit).place(x=1000, y=610)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
