@@ -45,6 +45,13 @@ if not file.exists():
     sheet['L1'] = "Mother's Occupation"
 
     wb.save(EXCEL_PATH)
+    
+    
+    
+    
+#Exit
+def Exit():
+    root.destroy()
 
 # ---------- Gender Selection Function ----------
 def selection():
@@ -185,11 +192,11 @@ except Exception as e:
     
     
 #Button   
-Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue").place(x=1000,y=370)
+Button(root,text="Upload",width=19,height=2,font="arial 12 bold",bg="lightblue", command = showimage).place(x=1000,y=370)
 saveButton=Button(root,text="Save",width=19,height=2,font="arial 12 bold",bg="lightgreen")
 saveButton.place(x=1000,y=450)
 Button(root,text="Reset",width=19,height=2,font="arial 12 bold",bg="lightpink").place(x=1000,y=530)
-Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="grey",command = exit).place(x=1000,y=610)
+Button(root,text="Exit",width=19,height=2,font="arial 12 bold",bg="grey",command = Exit).place(x=1000,y=610)
 
 # ---------- MAIN LOOP ----------
 root.mainloop()
