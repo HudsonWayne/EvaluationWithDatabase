@@ -45,6 +45,9 @@ if not file.exists():
 def registration_no():
     file = openpyxl.load_workbook('student_data.xlsx')
     sheet = file.active
+    row = sheet.max_row
+    
+    max_row_value= sheet.cell(row=row, column=1).value
 
 # ---------- Exit ----------
 def Exit():
