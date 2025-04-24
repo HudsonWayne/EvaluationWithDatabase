@@ -43,7 +43,8 @@ if not file.exists():
 
 
 def registration_no():
-    file = openpyxl.load_workbook()
+    file = openpyxl.load_workbook('student_data.xlsx')
+    sheet = file.active
 
 # ---------- Exit ----------
 def Exit():
