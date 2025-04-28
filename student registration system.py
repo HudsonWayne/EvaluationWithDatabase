@@ -72,6 +72,7 @@ def Clear():
     registration_no()
     
     saveButton.config(state = 'normal')
+    img1= PhotoImage(file= "images/user.png")
     
         
 
