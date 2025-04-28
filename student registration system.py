@@ -53,7 +53,14 @@ def registration_no():
         Registration.set(max_row_value+1)
         
     except:
-        Registration.set
+        Registration.set("1")
+        
+#################Clear##################
+def Clear():
+    Name.set(' ')
+    
+    
+        
 
 # ---------- Exit ----------
 def Exit():
@@ -74,8 +81,6 @@ def showimage():
 
 
 ############Registration#################
-def registration_no():
-    pass
 
 
 
@@ -142,7 +147,6 @@ Date = StringVar()
 
 reg_entry = Entry(root, textvariable=Registration, width=15, font="arial 10")
 reg_entry.place(x=160, y=150)
-
 
 registration_no()
 
@@ -223,7 +227,7 @@ except Exception as e:
 # ---------- Buttons ----------
 Button(root, text="Upload", width=19, height=2, font="arial 12 bold", bg="lightblue", command=showimage).place(x=1000, y=370)
 Button(root, text="Save", width=19, height=2, font="arial 12 bold", bg="lightgreen").place(x=1000, y=450)
-Button(root, text="Reset", width=19, height=2, font="arial 12 bold", bg="lightpink").place(x=1000, y=530)
+Button(root, text="Reset", width=19, height=2, font="arial 12 bold", bg="lightpink", command=Clear).place(x=1000, y=530)
 Button(root, text="Exit", width=19, height=2, font="arial 12 bold", bg="grey", command=Exit).place(x=1000, y=610)
 
 # ---------- MAIN LOOP ----------
