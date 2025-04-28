@@ -61,6 +61,7 @@ def Clear():
     DOB.set(' ')
     Religion.set(' ')
     Skill.set(' ')
+    F_Name.set(' ')
     
     
         
