@@ -65,6 +65,8 @@ def Clear():
     M_Name.set(' ')
     F_Occupation.set(' ')
     M_Occupation.set(' ')
+    Father_Occupation.set(' ')
+    Mother_Occupation.set(' ')
     
     
         
