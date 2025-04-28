@@ -63,6 +63,7 @@ def Clear():
     Skill.set(' ')
     F_Name.set(' ')
     M_Name.set(' ')
+    F_Occupation.set(' ')
     
     
         
