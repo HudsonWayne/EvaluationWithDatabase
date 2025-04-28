@@ -67,7 +67,11 @@ def Clear():
     M_Occupation.set(' ')
     Father_Occupation.set(' ')
     Mother_Occupation.set(' ')
+    Class.set("Select Class")
     
+    registration_no()
+    
+    saveButton.config(state = 'normal')
     
         
 
