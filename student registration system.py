@@ -64,6 +64,7 @@ def Clear():
     F_Name.set(' ')
     M_Name.set(' ')
     F_Occupation.set(' ')
+    M_Occupation.set(' ')
     
     
         
