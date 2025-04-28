@@ -62,6 +62,7 @@ def Clear():
     Religion.set(' ')
     Skill.set(' ')
     F_Name.set(' ')
+    M_Name.set(' ')
     
     
         
