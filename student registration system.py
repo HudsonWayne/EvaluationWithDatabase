@@ -58,6 +58,7 @@ def registration_no():
 #################Clear##################
 def Clear():
     Name.set(' ')
+    DOB.set(' ')
     
     
         
