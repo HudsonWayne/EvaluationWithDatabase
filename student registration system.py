@@ -59,6 +59,7 @@ def registration_no():
 def Clear():
     Name.set(' ')
     DOB.set(' ')
+    Religion.set(' ')
     
     
         
