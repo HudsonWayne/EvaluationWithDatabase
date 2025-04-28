@@ -60,6 +60,7 @@ def Clear():
     Name.set(' ')
     DOB.set(' ')
     Religion.set(' ')
+    Skill.set(' ')
     
     
         
