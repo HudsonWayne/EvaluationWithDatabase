@@ -114,12 +114,12 @@ def Save():
     Re1=Religion.set()
     S1=Skill.set()
     fathername=F_Name.set()
-    M_Name.set()
+    mothername=M_Name.set()
     F_Occupation.set()
     M_Occupation.set()
-    Father_Occupation.set()
-    Mother_Occupation.set()
-    Class.set("Select Class")
+    F1=Father_Occupation.set()
+    M1=Mother_Occupation.set()
+    
     
 
 
