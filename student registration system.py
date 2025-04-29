@@ -111,9 +111,9 @@ def Save():
     
     D2 =DOB.set()
     D1 = Date.set()
-    D1=Religion.set()
-    Skill.set()
-    F_Name.set()
+    Re1=Religion.set()
+    S1=Skill.set()
+    fathername=F_Name.set()
     M_Name.set()
     F_Occupation.set()
     M_Occupation.set()
