@@ -109,6 +109,17 @@ def Save():
         messagebox.showerror("error, Select Gender!")
     
     
+    D2 =DOB.set(' ')
+    Religion.set(' ')
+    Skill.set(' ')
+    F_Name.set(' ')
+    M_Name.set(' ')
+    F_Occupation.set(' ')
+    M_Occupation.set(' ')
+    Father_Occupation.set(' ')
+    Mother_Occupation.set(' ')
+    Class.set("Select Class")
+    
 
 
 
