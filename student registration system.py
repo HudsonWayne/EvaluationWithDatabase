@@ -131,7 +131,12 @@ def Save():
     print(S1)
     
     
-    if N =="" or C1 =="Select Class"
+    if N =="" or C1 =="Select Class" or Re1=="" or S1==""or fathername ==""or mothername=="" or F1==""or M1==""
+        messagebox.showerror("error", "Few Data is missing!")
+        
+    else:
+        file=openpyxl.load_workbook('student_data.xlsx')
+    
 
 
 
