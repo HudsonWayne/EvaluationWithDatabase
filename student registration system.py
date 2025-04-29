@@ -103,6 +103,10 @@ def Save():
     R1 = Registration.get()
     N1 = Name.get()
     C1 = Class.get()
+    try:
+        G1 = gender
+    except:
+        messagebox.showerror("error, Select Gender!")
     
     
 
