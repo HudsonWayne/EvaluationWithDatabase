@@ -115,11 +115,20 @@ def Save():
     S1=Skill.set()
     fathername=F_Name.set()
     mothername=M_Name.set()
-    F_Occupation.set()
-    M_Occupation.set()
     F1=Father_Occupation.set()
     M1=Mother_Occupation.set()
     
+    print(R1)
+    print(C1)
+    print(N1)
+    print(G1)
+    print(D2)
+    print(D1)
+    print(Re1)
+    print(S1)
+    print(fathername)
+    print(mothername)
+    print(S1)
     
 
 
