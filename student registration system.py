@@ -101,6 +101,9 @@ def showimage():
 ############SAVE#################
 def Save():
     R1 = Registration.get()
+    N1 = Name.get()
+    C1 = Class.get()
+    
     
 
 
