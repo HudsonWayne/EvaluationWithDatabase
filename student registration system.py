@@ -114,6 +114,7 @@ def Save():
 
 # ---------- Gender Selection ----------
 def selection():
+    global gender
     value = radio.get()
     gender = "Male" if value == 1 else "Female"
     print(gender)
