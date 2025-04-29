@@ -110,7 +110,7 @@ def Save():
     
     
     D2 =DOB.set(' ')
-    Religion.set(' ')
+    D1=Religion.set(' ')
     Skill.set(' ')
     F_Name.set(' ')
     M_Name.set(' ')
