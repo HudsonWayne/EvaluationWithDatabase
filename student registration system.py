@@ -76,6 +76,8 @@ def Clear():
     lbl.config(image=img1)
     lbl.image = img1
     
+    img= " "
+    
         
 
 # ---------- Exit ----------
@@ -96,8 +98,10 @@ def showimage():
         lbl.image = photo2
 
 
-############Registration#################
-
+############SAVE#################
+def Save():
+    R1 = Registration.get()
+    
 
 
 
