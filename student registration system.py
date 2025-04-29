@@ -130,6 +130,8 @@ def Save():
     print(mothername)
     print(S1)
     
+    
+    if N =="" or C1 =="Select Class"
 
 
 
